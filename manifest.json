@@ -1,0 +1,27 @@
+{
+  "name": "blinkers",
+  "version": "0.1.0",
+  "description": "Limits your uncontrollable habit to check facebook news feed!",
+  "icons": {
+   "32": "img/active.png",
+   "32": "img/inactive.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "img/active.png",
+      "24": "img/active.png",
+      "32": "img/active.png"
+    },
+    "default_title": "Blinker",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [{
+    "matches": ["*://*.facebook.com/*"],
+    "js": ["jquery-3.2.1.slim.min.js", "hide.js"]
+  }],
+  "manifest_version": 2
+}
