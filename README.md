@@ -1,2 +1,2 @@
-# blinkers
+# HideFeed
 A chrome extension that replaces facebook news feed with quotes
