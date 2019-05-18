@@ -27,23 +27,16 @@ function replace() {
               </div>`;
   x[0].innerHTML = html;
 
-  // this also hides the friends activities
-  // feed.children().remove();
-  // $('.ticker_stream').remove();
-  // $('.ego_column').remove();
-  // $('#pagelet_games_rhc').remove();
-  // $('#pagelet_trending_tags_and_topics').remove();
-  // $('#pagelet_canvas_nav_content').remove();
 }
 
 function fetch_quote() {
   const url = "";
-  fetch("https://talaikis.com/api/quotes/random/")
+  fetch("https://quotes.rest/qod")
   .then(function(data) {
     let res = data.json();
     res.then(function(result) {
-      quote = result.quote;
-      author = result.author;
+      quote = result['contents']['quotes'][0]['quote'];
+      author = result['contents']['quotes'][0]['author'];
     })
   })
   .catch(function(error) {
