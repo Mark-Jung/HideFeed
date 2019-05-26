@@ -30,13 +30,13 @@ function replace() {
 }
 
 function fetch_quote() {
-  const url = "";
-  fetch("https://quotes.rest/qod")
+  const url = "https://protected-brook-60597.herokuapp.com/quote/qod";
+  fetch(url)
   .then(function(data) {
     let res = data.json();
     res.then(function(result) {
-      quote = result['contents']['quotes'][0]['quote'];
-      author = result['contents']['quotes'][0]['author'];
+      quote = result['response']['quote'];
+      author = result['response']['author'];
     })
   })
   .catch(function(error) {
